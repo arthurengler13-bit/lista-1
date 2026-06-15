@@ -1,12 +1,17 @@
-﻿Console.Write("Informe uma nota de 0 a 10: ");
-double nota = double.Parse(Console.ReadLine());
+﻿Console.Write("Informe a quantidade de clientes atendidos: ");
+int quantidadeClientes = int.Parse(Console.ReadLine());
 
-while (nota < 0 || nota > 10)
+int tempoTotal = 0;
+
+for (int i = 1; i <= quantidadeClientes; i++)
 {
-    Console.WriteLine("Nota inválida. Informe novamente.");
+    Console.Write("Informe o tempo do atendimento: ");
+    int tempo = int.Parse(Console.ReadLine());
 
-    Console.Write("Informe uma nota de 0 a 10: ");
-    nota = double.Parse(Console.ReadLine());
+    tempoTotal += tempo;
 }
 
-Console.WriteLine("Nota registrada: " + nota);
+double tempoMedio = (double)tempoTotal / quantidadeClientes;
+
+Console.WriteLine("Tempo total de atendimento: " + tempoTotal + " minutos");
+Console.WriteLine("Tempo médio por cliente: " + tempoMedio + " minutos");

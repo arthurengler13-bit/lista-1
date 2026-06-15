@@ -1,26 +1,12 @@
-﻿int positivos = 0;
-int negativos = 0;
-int zeros = 0;
+﻿Console.Write("Informe a senha: ");
+int senha = int.Parse(Console.ReadLine());
 
-for (int i = 1; i <= 10; i++)
+while (senha != 1234)
 {
-    Console.Write("Informe um número: ");
-    int numero = int.Parse(Console.ReadLine());
+    Console.WriteLine("Senha incorreta. Tente novamente.");
 
-    if (numero > 0)
-    {
-        positivos++;
-    }
-    else if (numero < 0)
-    {
-        negativos++;
-    }
-    else
-    {
-        zeros++;
-    }
+    Console.Write("Informe a senha: ");
+    senha = int.Parse(Console.ReadLine());
 }
 
-Console.WriteLine("Quantidade de positivos: " + positivos);
-Console.WriteLine("Quantidade de negativos: " + negativos);
-Console.WriteLine("Quantidade de zeros: " + zeros);
+Console.WriteLine("Acesso permitido.");

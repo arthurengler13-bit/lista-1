@@ -1,5 +1,5 @@
-﻿Console.Write("Informe o saldo inicial: ");
-double saldo = double.Parse(Console.ReadLine());
+﻿Console.Write("Informe a quantidade inicial em estoque: ");
+int estoque = int.Parse(Console.ReadLine());
 
 int operacao;
 
@@ -10,29 +10,34 @@ do
 
     if (operacao == 1)
     {
-        Console.Write("Informe o valor da movimentação: ");
-        double valor = double.Parse(Console.ReadLine());
+        Console.Write("Informe a quantidade movimentada: ");
+        int quantidade = int.Parse(Console.ReadLine());
 
-        saldo += valor;
+        estoque += quantidade;
 
-        Console.WriteLine("Entrada registrada. Saldo atual: R$ " + saldo);
+        Console.WriteLine("Entrada registrada. Estoque atual: " + estoque);
     }
     else if (operacao == 2)
     {
-        Console.Write("Informe o valor da movimentação: ");
-        double valor = double.Parse(Console.ReadLine());
+        Console.Write("Informe a quantidade movimentada: ");
+        int quantidade = int.Parse(Console.ReadLine());
 
-        if (valor <= saldo)
+        if (quantidade <= estoque)
         {
-            saldo -= valor;
-            Console.WriteLine("Saída registrada. Saldo atual: R$ " + saldo);
+            estoque -= quantidade;
+
+            Console.WriteLine("Saída registrada. Estoque atual: " + estoque);
         }
         else
         {
-            Console.WriteLine("Saldo insuficiente.");
+            Console.WriteLine("Quantidade insuficiente em estoque.");
         }
     }
+    else if (operacao == 3)
+    {
+        Console.WriteLine("Estoque atual: " + estoque);
+    }
 
-} while (operacao != 3);
+} while (operacao != 4);
 
-Console.WriteLine("Saldo final: R$ " + saldo);
+Console.WriteLine("Estoque final: " + estoque);
